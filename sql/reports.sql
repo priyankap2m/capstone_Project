@@ -3,9 +3,6 @@
 --
 -- Run against the RAW (uncleaned) data loaded by schema.sql + seed_data.sql.
 -- Every result below was produced by actually executing these queries with
--- Python's sqlite3 against that exact load -- pasted here verbatim, not typed
--- by hand.
---
 -- NOTE on NULL handling: seed_data.sql loads orders via generated INSERT
 -- statements (see sql/seed_data.sql), so blank discount_pct/rating cells
 -- already arrive as SQL NULL. If you instead load orders.csv with SQLite's
