@@ -1,0 +1,10 @@
+Path used: offline (keyless fallback)
+
+Situation
+Mamaearth closed the period with Rs.97,358.3 in verified revenue after data cleaning, down from a raw, uncleaned figure of Rs.99,860.2. Payment-method mix is healthy on the surface: CARD (14.7%) and UPI (18.9%) both show manageable return rates, while March 2026 (2026-03) is the genuine best month of the period at Rs.20,318.9 once bulk-order noise is removed.
+
+Complication
+Two issues are quietly eating into that picture. First, COD orders return at 44.4%, and that risk is not spread evenly: COD orders from city_tier 2 cities alone return at 54.5%, well above the blended COD average -- the real exposure is concentrated, not uniform. Second, a double-submit bug generated duplicate orders that inflated the raw revenue figure by Rs.2,501.9 before cleaning caught them. A third distortion is timing: January 2026 (2026-01) looked like the top month at an apparent Rs.29,582.1, but that figure collapses to Rs.11,637.1 once two outsized bulk orders are excluded -- the true peak is March 2026, not January 2026.
+
+Resolution
+Ops should prioritize a COD review specifically for city_tier 2 markets -- deposit-on-delivery, address verification, or COD caps for repeat-return customers in those cities -- rather than a blanket COD policy change, since city_tier 1 COD risk is materially lower. Engineering should patch the checkout double-submit bug that produced the Rs.2,501.9 duplicate-order leak, and finance should treat March 2026's Rs.20,318.9 as the real demand baseline for forecasting, not the outlier-inflated January 2026 number, to avoid over-committing inventory or marketing spend against a phantom peak.
