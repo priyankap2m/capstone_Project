@@ -3,7 +3,7 @@
 Capstone project — Data Analytics with AI & Gen AI, E&ICT Academy IIT Roorkee.
 
 A three-layer pipeline: a SQL relational store finds and quantifies return-rate
-patterns, an independent pandas layer cleans the same raw data and verifies
+patterns, an independent pandas(python) layer cleans the same raw data and verifies
 those numbers statistically, and a GenAI layer turns the verified numbers into
 a business narrative. **No layer reports a number it did not itself compute or
 receive from the layer before it.**
